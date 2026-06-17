@@ -57,3 +57,4 @@ To compile and run this project, you will need:
 * [Dear ImGui](https://github.com/ocornut/imgui) - Bloat-free immediate mode graphical user interface for C++.
 * [SDL3](https://github.com/libsdl-org/SDL) - Simple DirectMedia Layer for cross-platform platform abstraction.
 * [OpenGL](https://www.opengl.org/) - Industry standard graphics pipeline.
+* [GLAD](https://glad.dav1d.de/) - Multi-Language GL Loader-Generator for modern OpenGL.
