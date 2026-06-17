@@ -1,0 +1,52 @@
+# ==========================================
+# Visual Studio Junk & Cache
+# ==========================================
+.vs/
+*.user
+*.suo
+*.peruser
+*.userosscache
+*.sln.docstates
+
+# ==========================================
+# Build Output Directories
+# ==========================================
+Debug/
+Release/
+x64/
+x86/
+[Dd]ebug/
+[Rr]elease/
+$投/
+
+# ==========================================
+# Compiled Artifacts & Tools
+# ==========================================
+*.obj
+*.pdb
+*.ilk
+*.exe
+*.dll
+*.lib
+*.exp
+*.log
+*.tlog
+*.lastbuildstate
+*.recipe
+*.idb
+*.ilk
+
+# ==========================================
+# Visual Studio Code Analysis & Database
+# ==========================================
+*.VC.db
+*.VC.opendb
+*.sdf
+*.ipch
+*.aps
+# Ignore ImGui window layout configurations
+imgui.ini
+
+# OPTIONAL: Uncomment the lines below if you don't want to upload giant SDL library files
+External/SDL3/
+External/SDL3_ttf-3.1.0/
