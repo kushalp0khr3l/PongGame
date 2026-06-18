@@ -3,5 +3,7 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="ponggame.vcxproj" Id="3f7dc40f-b102-47fc-b555-49c92ad07076" />
+  <Project Path="ponggame.vcxproj" Id="3f7dc40f-b102-47fc-b555-49c92ad07076">
+    <Build Solution="Release|x64" Project="false" />
+  </Project>
 </Solution>

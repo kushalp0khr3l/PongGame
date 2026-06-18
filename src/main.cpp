@@ -115,6 +115,8 @@ int main(int argc, char* argv[]) {
 
     int leftScore = 0;
     int rightScore = 0;
+    int touch = 0;
+    int max_touch = 0;
 
     // Customizable color state for ImGui slider
     float ballColor[4] = { 0.0f, 1.0f, 1.0f, 1.0f };
@@ -131,6 +133,7 @@ int main(int argc, char* argv[]) {
 
                         rightScore = 0;
                         leftScore = 0;
+
                     }
                 }
             }
@@ -173,23 +176,35 @@ int main(int argc, char* argv[]) {
             if (ballX - radius <= -0.85f && ballX + radius >= -0.9f) {
                 if (ballY <= leftPaddleY + 0.2f && ballY >= leftPaddleY - 0.2f) {
                     ballSpeedX = -ballSpeedX; ballX = -0.83f;
+                    touch++;
                 }
             }
             if (ballX + radius >= 0.85f && ballX - radius <= 0.9f) {
                 if (ballY <= rightPaddleY + 0.2f && ballY >= rightPaddleY - 0.2f) {
                     ballSpeedX = -ballSpeedX; ballX = 0.83f;
+                    touch++;
                 }
             }
+
 
             if (ballX > 1.0f || ballX < -1.0f) {
                 if (ballX > 1.0f) { leftScore++;
                 leftPaddleY = 0.0f;
                 rightPaddleY = 0.0f;
+                if (max_touch <= touch) {
+                    max_touch = touch;
+                }
+                touch = 0;
                 
                 }
                 else { rightScore++; 
                  leftPaddleY = 0.0f;
                 rightPaddleY = 0.0f;
+                if (max_touch <= touch) {
+                    max_touch = touch;
+                }
+                
+                touch = 0;
                 
                 }
                 ballX = 0.0f; ballY = 0.0f;
@@ -265,6 +280,13 @@ int main(int argc, char* argv[]) {
         ImGui::Text("%d   |   %d", leftScore, rightScore);
         ImGui::End();
 
+        //touch counter
+		ImGui::SetNextWindowPos(ImVec2(20, 20), ImGuiCond_Always);
+		ImGui::SetNextWindowSize(ImVec2(240, 60), ImGuiCond_Always);
+		ImGui::Begin("touch counter", nullptr, ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove);
+        ImGui::SetWindowFontScale(2.5f);
+		ImGui::Text("%d  %d", touch,max_touch);
+        ImGui::End();
         // DRAW UI ELEMENT B: A Live Engine Tweaker Panel
         //ImGui::Begin("Engine Control Settings");
         //ImGui::Text("Application Average: %.3f ms/frame (%.1f FPS)", 1000.0f / io.Framerate, io.Framerate);
