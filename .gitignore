@@ -12,7 +12,8 @@
 # Build Output Directories
 # ==========================================
 Debug/
-
+Release/
+x64/
 
 x86/
 [Dd]ebug/
@@ -25,7 +26,7 @@ $投/
 *.obj
 *.pdb
 *.ilk
-
+*.exe
 *.dll
 *.lib
 *.exp
