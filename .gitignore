@@ -18,7 +18,7 @@ $投/
 # Compiled Artifacts & Tools
 # ==========================================
 *.obj
-*.pdb
+
 *.ilk
 
 *.dll
@@ -40,8 +40,10 @@ $投/
 *.ipch
 *.aps
 # Ignore ImGui window layout configurations
-imgui.ini
+
 
 # OPTIONAL: Uncomment the lines below if you don't want to upload giant SDL library files
 External/SDL3/
 External/SDL3_ttf-3.1.0/
+ponggame/
+x64/Debug/
